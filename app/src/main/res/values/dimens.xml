@@ -4,4 +4,9 @@
     <dimen name="normalFont">24sp</dimen>
     <dimen name="smallFont">16sp</dimen>
 
+    <dimen name="smallPadding">4dp</dimen>
+
+    <dimen name="normalMargin">16dp</dimen>
+    <dimen name="bigMargin">24dp</dimen>
+
 </resources>

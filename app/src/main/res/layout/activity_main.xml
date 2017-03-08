@@ -7,7 +7,7 @@
         android:id="@+id/scoresView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/normalMargin"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -17,57 +17,46 @@
             android:orientation="vertical">
 
             <TextView
+                style="@style/TeamNameStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="@dimen/normalMargin"
                 android:gravity="center_horizontal"
-                android:padding="4dp"
-                android:text="@string/teamA"
-                android:textColor="@color/darkGrey"
-                android:textSize="@dimen/smallFont" />
+                android:text="@string/teamA" />
 
             <TextView
+                style="@style/PointsCounterStyle"
                 android:id="@+id/team_a_points"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="sans-serif-light"
+                android:layout_marginBottom="@dimen/normalMargin"
                 android:gravity="center_horizontal"
-                android:padding="4dp"
-                android:text="0"
-                android:textColor="@color/black"
-                android:textSize="@dimen/bigFont" />
+                android:text="0"/>
 
             <TextView
+                style="@style/SetsCounterStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/sets"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="@dimen/normalFont"
-                android:textColor="@color/darkGrey"/>
+                android:text="@string/sets"/>
 
             <TextView
+                style="@style/SetsCounterStyle"
                 android:id="@+id/team_a_sets"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/setsA"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="@dimen/normalFont"
-                android:textColor="@color/darkGrey"/>
+                android:text="@string/setsA"/>
 
             <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/add_one_team_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
+                android:layout_marginLeft="@dimen/bigMargin"
+                android:layout_marginRight="@dimen/bigMargin"
                 android:onClick="addOneForTeamA"
-                android:text="@string/pointButton"
-                android:textColor="@color/white" />
+                android:text="@string/pointButton"/>
 
 
         </LinearLayout>
@@ -84,72 +73,60 @@
             android:orientation="vertical">
 
             <TextView
+                style="@style/TeamNameStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="@dimen/normalMargin"
                 android:gravity="center_horizontal"
-                android:padding="4dp"
-                android:text="@string/teamB"
-                android:textColor="@color/darkGrey"
-                android:textSize="@dimen/smallFont" />
+                android:text="@string/teamB"/>
 
             <TextView
+                style="@style/PointsCounterStyle"
                 android:id="@+id/team_b_points"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="sans-serif-light"
+                android:layout_marginBottom="@dimen/normalMargin"
                 android:gravity="center_horizontal"
-                android:padding="4dp"
-                android:text="0"
-                android:textColor="@color/black"
-                android:textSize="@dimen/bigFont" />
+                android:text="0" />
 
             <TextView
+                style="@style/SetsCounterStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/sets"
-                android:textSize="@dimen/normalFont"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="@color/darkGrey"/>
+                android:text="@string/sets"/>
 
             <TextView
+                style="@style/SetsCounterStyle"
                 android:id="@+id/team_b_sets"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/setsB"
-                android:textSize="@dimen/normalFont"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="@color/darkGrey"/>
+                android:text="@string/setsB"/>
 
             <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/add_one_team_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
+                android:layout_marginLeft="@dimen/bigMargin"
+                android:layout_marginRight="@dimen/bigMargin"
                 android:onClick="addOneForTeamB"
-                android:text="@string/pointButton"
-                android:textColor="@color/white" />
+                android:text="@string/pointButton"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
     <TextView
+        style="@style/MiddleScreenStyle"
         android:id="@+id/text_middle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/resetButtons"
         android:layout_below="@id/scoresView"
         android:gravity="center"
-        android:text="@string/startGame"
-        android:textColor="@color/black"
-        android:textSize="@dimen/normalFont" />
+        android:text="@string/startGame"/>
 
     <LinearLayout
         android:id="@id/resetButtons"
@@ -157,25 +134,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="@dimen/bigMargin"
         android:orientation="vertical">
 
         <Button
+            style="@style/ButtonStyle"
             android:id="@+id/reset_points"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="resetPoints"
-            android:text="@string/resetPointsButton"
-            android:textColor="@color/white" />
+            android:text="@string/resetPointsButton"/>
 
         <Button
+            style="@style/ButtonStyle"
             android:id="@+id/reset_sets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:onClick="resetAll"
-            android:text="@string/resetAllButton"
-            android:textColor="@color/white" />
+            android:text="@string/resetAllButton"/>
     </LinearLayout>
 
 </RelativeLayout>

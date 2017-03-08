@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static java.lang.String.valueOf;
+
 public class MainActivity extends AppCompatActivity {
 
     int pointsTeamA = 0;
@@ -21,8 +23,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Increase the score for team A by 1 point
+     * Save current values when rotating screen
      */
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt(valueOf(pointsTeamA), pointsTeamA);
+        savedInstanceState.putInt(valueOf(pointsTeamB), pointsTeamB);
+        savedInstanceState.putInt(valueOf(setsTeamA), setsTeamA);
+        savedInstanceState.putInt(valueOf(setsTeamB), setsTeamB);
+        savedInstanceState.putString(String.valueOf(middleScreen), middleScreen);
+
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    /**
+     * Restore current values when rotating screen
+     */
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+          super.onRestoreInstanceState(savedInstanceState);
+
+        // Restore state members from saved instance
+        pointsTeamA = savedInstanceState.getInt(valueOf(pointsTeamA));
+        pointsTeamB = savedInstanceState.getInt(valueOf(pointsTeamB));
+        setsTeamA = savedInstanceState.getInt(valueOf(setsTeamA));
+        setsTeamB = savedInstanceState.getInt(valueOf(setsTeamB));
+        middleScreen = savedInstanceState.getString(String.valueOf(middleScreen));
+    }
+
+         /**
+         * Increase the score for team A by 1 point
+         */
     public void addOneForTeamA(View view) {
         pointsTeamA = pointsTeamA + 1;
         middleScreen = "Game in progress";
@@ -96,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayPointsForTeamA(int pointsTeamA) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_points);
-        scoreView.setText(String.valueOf(pointsTeamA));
+        scoreView.setText(valueOf(pointsTeamA));
     }
 
     /**
@@ -104,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displaySetsForTeamA(int setsTeamA) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_sets);
-        scoreView.setText(String.valueOf(setsTeamA));
+        scoreView.setText(valueOf(setsTeamA));
     }
 
     /**
@@ -183,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayPointsForTeamB(int pointsTeamB) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_points);
-        scoreView.setText(String.valueOf(pointsTeamB));
+        scoreView.setText(valueOf(pointsTeamB));
     }
 
     /**
@@ -191,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displaySetsForTeamB(int setsTeamB) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_sets);
-        scoreView.setText(String.valueOf(setsTeamB));
+        scoreView.setText(valueOf(setsTeamB));
     }
 
     /**
