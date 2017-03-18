@@ -25,16 +25,17 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Save current values when rotating screen
      */
+
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putInt(valueOf(pointsTeamA), pointsTeamA);
-        savedInstanceState.putInt(valueOf(pointsTeamB), pointsTeamB);
-        savedInstanceState.putInt(valueOf(setsTeamA), setsTeamA);
-        savedInstanceState.putInt(valueOf(setsTeamB), setsTeamB);
-        savedInstanceState.putString(String.valueOf(middleScreen), middleScreen);
-
         super.onSaveInstanceState(savedInstanceState);
-    }
+
+        savedInstanceState.putInt("points_team_a", pointsTeamA);
+        savedInstanceState.putInt("points_team_b", pointsTeamB);
+        savedInstanceState.putInt("sets_team_a", setsTeamA);
+        savedInstanceState.putInt("sets_team_b", setsTeamB);
+        savedInstanceState.putString("text_middle_screen", middleScreen);
+       }
 
     /**
      * Restore current values when rotating screen
@@ -42,12 +43,18 @@ public class MainActivity extends AppCompatActivity {
     public void onRestoreInstanceState(Bundle savedInstanceState) {
           super.onRestoreInstanceState(savedInstanceState);
 
-        // Restore state members from saved instance
-        pointsTeamA = savedInstanceState.getInt(valueOf(pointsTeamA));
-        pointsTeamB = savedInstanceState.getInt(valueOf(pointsTeamB));
-        setsTeamA = savedInstanceState.getInt(valueOf(setsTeamA));
-        setsTeamB = savedInstanceState.getInt(valueOf(setsTeamB));
-        middleScreen = savedInstanceState.getString(String.valueOf(middleScreen));
+        // Restore state from saved instance
+        pointsTeamA = savedInstanceState.getInt("points_team_a");
+        pointsTeamB = savedInstanceState.getInt("points_team_b");
+        setsTeamA = savedInstanceState.getInt("sets_team_a");
+        setsTeamB = savedInstanceState.getInt("sets_team_b");
+        middleScreen = savedInstanceState.getString("text_middle_screen");
+
+        displaySetsForTeamA(setsTeamA);
+        displayPointsForTeamA(pointsTeamA);
+        displaySetsForTeamB(setsTeamB);
+        displayPointsForTeamB(pointsTeamB);
+        displayMiddleScreen(middleScreen);
     }
 
          /**
