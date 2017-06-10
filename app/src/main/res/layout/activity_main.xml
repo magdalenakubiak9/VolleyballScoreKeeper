@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/normalMargin"
                 android:gravity="center_horizontal"
-                android:text="0"/>
+                android:text="@string/pointsA"/>
 
             <TextView
                 style="@style/SetsCounterStyle"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/normalMargin"
                 android:gravity="center_horizontal"
-                android:text="0" />
+                android:text="@string/pointsB"/>
 
             <TextView
                 style="@style/SetsCounterStyle"

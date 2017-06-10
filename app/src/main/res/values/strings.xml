@@ -5,6 +5,8 @@
     <string name="sets">Sets</string>
     <string name="setsA">0</string>
     <string name="setsB">0</string>
+    <string name="pointsA">0</string>
+    <string name="pointsB">0</string>
 
     <string name="pointButton">+ 1 point</string>
     <string name="resetPointsButton">Reset points</string>
